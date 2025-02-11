@@ -9,7 +9,7 @@ template <typename E> class Lista {
         virtual void clear() = 0;
         virtual void insert(const E& item) = 0;
         virtual void append(const E& item) = 0;
-        virtual E remove() = 0;
+        virtual void remove() = 0;
         virtual void moveToStart() = 0;
         virtual void moveToEnd() = 0;
         virtual void prev() = 0;
@@ -38,7 +38,7 @@ class Lista_array : public Lista<T>{
         void insert(const T& termo);
         void append(const T& termo);
 
-        T remove();
+        void remove();
 
         void moveToStart();
         void moveToEnd();
@@ -47,6 +47,8 @@ class Lista_array : public Lista<T>{
         void next();
 
         int length() const;
+
+        int count(const T& termo) const;
 
         int currPos() const;
 

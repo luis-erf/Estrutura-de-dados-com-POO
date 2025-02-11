@@ -24,11 +24,7 @@ int main(){
         else if(comando == "count"){
             int count = 0;
             cin >> num;
-            for(lista.moveToStart(); lista.currPos() < lista.length(); lista.next()){
-                if(lista.getValue() == num){
-                    count++;
-                }
-            }
+            count = lista.count(num);
             cout << count << "\n";
         }
         else if(comando == "prev"){

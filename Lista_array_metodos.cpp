@@ -38,14 +38,23 @@ void Lista_array<T> :: append(const T& termo){
 }
 
 template<typename T>
-T Lista_array<T> :: remove(){
+int Lista_array<T> :: count(const T& termo) const{
+    int qnt = 0;
+    for(int i = 0; i < current_size; i++){
+        if(listArray[i] == termo){
+            qnt++;
+        }
+    }
+    return qnt;
+}
+
+template<typename T>
+void Lista_array<T> :: remove(){
     if(curr >= 0 && curr < current_size){
-        T termo = listArray[curr];
         for(int i = curr; i < current_size; i++){
             listArray[i] = listArray[i + 1];
         }
         current_size--;
-        return termo;
     }
 }
 
