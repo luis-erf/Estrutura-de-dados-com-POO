@@ -14,7 +14,6 @@ int main(){
     Linked_list<int> lista;
     for(int i = 0; i < qnt_com; i++){
         cin >> comando;
-        if(comando == "insert"){
             cin >> num;
             lista.insert(num);
         }
