@@ -62,8 +62,8 @@ class link{
     public:
         T elemento;
         link* next;
-        link(const T& valor_elemento, link* next_val =NULL);
-        link(link* next_val =NULL);
+        link(const T& valor_elemento, link* next_val = NULL);
+        link(link* next_val = NULL);
 };
 
 template<typename T>

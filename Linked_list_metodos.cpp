@@ -41,13 +41,15 @@ void Linked_list<T> :: append(const T& termo){
 
 template<typename T>
 void Linked_list<T> :: remove(){
-    link<T>* ltemp = curr->next;
-    if(tail == curr->next){
-        tail = curr;
+    if(curr->next != NULL){
+        link<T>* ltemp = curr->next;
+        if(tail == curr->next){
+            tail = curr;
+        }
+        curr->next = curr->next->next;
+        delete ltemp;
+        cnt--;
     }
-    curr->next = curr->next->next;
-    delete ltemp;
-    cnt--;
 }
 
 template<typename T>
@@ -114,8 +116,8 @@ const T& Linked_list<T> :: getValue() const{
 template<typename T>
 int Linked_list<T> :: count(const T& termo) const{
     int qnt = 0;
-    link<T>* temp = head;
-    while(temp->next != NULL){
+    link<T>* temp = head->next;
+    while(temp != NULL){
         if(temp->elemento == termo){
             qnt++;
         }
