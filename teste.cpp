@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Lista_array_metodos.cpp"
+#include "Linked_list_metodos.cpp"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ int main(){
         >> qnt_com;
     string comando;
     int num;
-    Lista_array<int> lista(100);
+    Linked_list<int> lista;
     for(int i = 0; i < qnt_com; i++){
         cin >> comando;
         if(comando == "insert"){

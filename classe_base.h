@@ -56,3 +56,51 @@ class Lista_array : public Lista<T>{
 
         const T& getValue() const;
 };
+
+template<typename T> 
+class link{
+    public:
+        T elemento;
+        link* next;
+        link(const T& valor_elemento, link* next_val =NULL);
+        link(link* next_val =NULL);
+};
+
+template<typename T>
+class Linked_list : public Lista<T>{
+    private:
+        link<T>* head;
+        link<T>* tail;
+        link<T>* curr;
+        int cnt;
+
+        void init();
+        void removeall();
+    
+    public:
+        Linked_list();
+        ~Linked_list();
+
+        void insert(const T& termo);
+        void append(const T& termo);
+
+        void clear();
+
+        void remove();
+
+        void moveToStart();
+        void moveToEnd();
+
+        void prev();
+        void next();
+
+        int length() const;
+
+        int count(const T& termo) const;
+
+        int currPos() const;
+
+        void moveToPos(int pos);
+
+        const T& getValue() const;
+};
