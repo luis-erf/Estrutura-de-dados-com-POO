@@ -1,4 +1,4 @@
-#include "classe_base.h"
+#include "listas/Classe_listas.h"
 template<typename T>
 Lista_array<T> :: Lista_array(int size){
     maxSize = size;

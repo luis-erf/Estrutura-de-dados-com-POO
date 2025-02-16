@@ -1,4 +1,4 @@
-#include "classe_base.h"
+#include "listas/Classe_listas.h"
 
 template<typename T>
 void Linked_list<T> :: init(){

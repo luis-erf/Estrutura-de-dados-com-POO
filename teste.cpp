@@ -1,36 +1,37 @@
 #include <iostream>
 #include <string>
-#include "Linked_list_metodos.cpp"
+#include "array_pilha_metodos.cpp"
 
 using namespace std;
 
 int main(){
     int casos;
-    int qnt_com;
-    cin >> casos
-        >> qnt_com;
+    cin >> casos;
     string comando;
     int num;
-    Linked_list<int> lista;
-    for(int i = 0; i < qnt_com; i++){
-        cin >> comando;
+    
+    Array_stack<int> pilha(1000);
+    for(int i = 0; i < casos; i++){
+        cout << "Caso " << i + 1 << ":" << endl;
+        while(comando != "end"){
+            cin >> comando;
+            if(comando == "end"){
+                break;
+            }
             cin >> num;
-            lista.insert(num);
+            if(comando == "push"){
+                pilha.push(num);
+            }
+            else if(comando == "pop"){
+                int soma = 0;
+                for(int j = 0; j < num; j++){
+                    soma += pilha.pop();
+                }   
+                cout << soma << endl;
+            }
         }
-        else if(comando == "remove"){
-            lista.remove();
-        }
-        else if(comando == "count"){
-            int count = 0;
-            cin >> num;
-            count = lista.count(num);
-            cout << count << "\n";
-        }
-        else if(comando == "prev"){
-            lista.prev();
-        }
-        else if(comando == "next"){
-            lista.next();
-        }
-    }
+    }   
+
+    
+    return 0;
 }
