@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "array_pilha_metodos.cpp"
+#include "linked_pilha_metodos.cpp"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main(){
     string comando;
     int num;
     
-    Array_stack<int> pilha(1000);
+    Linked_stack<int> pilha;
     for(int i = 0; i < casos; i++){
         cout << "Caso " << i + 1 << ":" << endl;
         while(comando != "end"){

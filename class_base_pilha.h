@@ -34,3 +34,33 @@ class Array_stack : public stack<T>{
 
         int length() const;
 };
+
+template<typename T> 
+class link{
+    public:
+        T elemento;
+        link* next;
+        link(const T& valor_elemento, link* next_val = NULL);
+        link(link* next_val = NULL);
+};
+
+template<typename T>
+class Linked_stack : public stack<T>{
+    private:
+        link<T>* top;
+        int size;
+    
+    public:
+        Linked_stack();
+        ~Linked_stack();
+
+        void clear();
+
+        void push(const T& termo);
+
+        T pop();
+
+        const T& top_value() const;
+
+        int length() const;
+};
